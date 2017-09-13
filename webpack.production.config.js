@@ -7,11 +7,11 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var StatsPlugin = require('stats-webpack-plugin');
 
 module.exports = {
-    // The entry file. All your app roots from here.
+    // The entry file. All your src roots from here.
     entry: [
         // Polyfills go here too, like babel-polyfill or whatwg-fetch
         'babel-polyfill',
-        path.join(__dirname, 'app/index.js')
+        path.join(__dirname, 'src/index.js')
     ],
     // Where you want the output to go
     output: {
@@ -29,7 +29,7 @@ module.exports = {
         // change name because the hash part changes. We want hash name changes to bust cache
         // on client browsers.
         new HtmlWebpackPlugin({
-            template: 'app/index.tpl.html',
+            template: 'src/index.tpl.html',
             inject: 'body',
             filename: 'index.html'
         }),
